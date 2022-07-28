@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title_content %}
+    <title>DTL</title>
+{% endblock %}
+
+{% block page_content %}
+  <h1> THIS IS DTL PAGE </h1><br>
+First_name    :    {{  firstname  }}<br>
+Lastname      :    {{  lastname  }}<br>
+Age           :    {{  age  }}<br>
+Address       :    {{ address }}<br>
+fruits        :    {{ lists }}<br>
+Lists         :    {{ lists.0 }}, {{ lists.1 }}, {{ lists.2 }}<br>
+Items         :    {{ Items }}<br>
+Items keys    :    {{ Items.keys }}<br>
+Items values  :    {{ Items.values }}<br>
+Items values  :    {{ Items.items }}<br>
+Eployee name  :    {{ Emp.name }}<br>
+Eployee Age   :    {{ Emp.age }}<br>
+Eployee Salary  :  {{ Emp.salary }}<br>
+date now how much  :   {{ datenow }}<br>
+Todays Date In Default Format:::: {{ datenow }} <br>
+Todays Date In Modified format:::: {{ datenow|date:"M d b Y" }}<br>
+Todays Date In Default format:::: {{ datenow|date:"SHORT_DATE_FORMAT" }}<br>
+Default Date format:::: {{ datenow|date:"DATE_FORMAT" }}<br>
+{% for key,numdict in numdict.items %}
+{{ key }} ,  {{ numdict }}
+{% endfor %}
+<br><br>
+name101   :   {{ numdict.400 }}<br>
+name102   :    {{ numdict.401 }}<br>
+name103   :    {{ numdict.403 }}<br>
+name104   :    {{ numdict.404 }}<br>
+<!--{% for ethis in Ethis %}-->
+family_father   :     {{ Ethis.father }}
+family_father   :     {{ Ethis.mother }}
+family_father   :     {{ Ethis.son }}
+family_father   :     {{ Ethis.daughter }}
+<!--{% endfor %}-->
+{% endblock %}

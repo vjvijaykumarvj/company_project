@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block style_content %}
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+{% endblock %}
+
+{% block title_content %}
+<title> CBV - Employee List </title>
+{% endblock %}
+
+{% block page_content %}
+<h1> Employee Details Using Class Based View </h1>
+<br>
+<a href="/employee/">CBV - Create Employee</a>
+<br><br>
+<table id="customers">
+    <tr>
+        <th>ID</th>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Address</th>
+    </tr>
+    {% for employee in employee_load %}
+    <tr>
+        <td><a href="#">{{ employee.id }}</a></td>
+        <td>{{ employee.eno }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.age }}</td>
+        <td>{{ employee.salry }}</td>
+        <td>{{ employee.address }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

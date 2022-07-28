@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block title_content %}
+    <title>Create Employee</title>
+{% endblock %}
+
+{% block page_content %}
+
+{% if employee.eno %}
+	<h1>Update Employee</h1>
+{% else %}
+	<h1>Create Employee</h1>
+{% endif %}
+
+<form class="row g-3" method="POST">
+	{% csrf_token %}
+	  <div class="row mb-1">
+		<label class="col-form-label">Enter Employee ID</label>
+		<div class="col-sm-4">
+		  <input type="text" name="emp_number" class="form-control form-control-sm" value={{employee.eno}}>
+		</div>
+	  </div>
+
+	  <div class="row mb-1">
+		<label class="col-form-label">Enter Employee Name</label>
+		<div class="col-sm-4">
+		  <input type="text" name="name" class="form-control form-control-sm"  value={{employee.name}}>
+		</div>
+	  </div>
+
+	  <div class="row mb-1">
+		<label class="col-form-label">Enter Employee Age</label>
+		<div class="col-sm-4">
+		  <input type="text" name="age" class="form-control form-control-sm"  value={{employee.age}}>
+		</div>
+	  </div>
+
+	  <div class="row mb-1">
+		<label class="col-form-label">Enter Employee Salary</label>
+		<div class="col-sm-4">
+		  <input type="text" name="salary" class="form-control form-control-sm" value={{employee.salary}}>
+		</div>
+	  </div>
+
+	  <div class="row mb-1">
+		<label class="col-form-label">Enter Employee Address</label>
+		<div class="col-sm-4">
+		  <input type="text" name="address" class="form-control form-control-sm" value={{employee.address}}>
+		</div>
+	  </div>
+
+	  <div class="form-group">
+		{% if employee.eno %}
+			<button type="submit" class="btn btn-primary">Update Employee</button>
+		{% else %}
+		    <button type="submit" class="btn btn-primary">Create Employee</button>
+		{% endif %}
+	  </div>
+
+	</form>
+{% endblock %}

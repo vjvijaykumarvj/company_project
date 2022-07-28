@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+
+{% block title_content %}
+    <title>Studentreg</title>
+{% endblock %}
+
+{% block page_content %}
+<h1> THIS IS STUDENT REGISTRATION FOAM </h1>
+<form method="POST">
+    {% csrf_token %}
+<table>
+    <tr>
+        <td>Firstname</td>
+        <td><input type="text" name="firstname"></td>
+    </tr>
+    <tr>
+        <td>Lastname</td>
+        <td><input type="text" name="lastname"></td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td>
+            <input type="radio" name="gender" value="male">
+            <label>male</label><br>
+            <input type="radio" name="gender" value="female">
+            <label>female</label><br>
+        </td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td><input type="text" name="age"></td>
+    </tr>
+    <tr>
+        <td>contact number</td>
+        <td><input type="text"name="contactnumber"></td>
+    </tr>
+    <tr>
+        <td>Email_id</td>
+        <td><input type="text" name="emailid"></td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td>
+            <textarea name="address"></textarea>
+        </td>>
+    </tr>
+    <tr>
+        <td>City</td>
+        <td>
+            <select name="city">
+                <option value="bangalore">bangalore</option>
+                <option value="tirupathi">tirupathi</option>
+                <option value="mumbai">mumbai</option>
+                <option value="chennai">chennai</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>state</td>
+        <td>
+            <select name="state">
+                <option value="karnataka">karnataka</option>
+                <option value="andhrapradesh">andhrapradesh</option>
+                <option value="maharastra">maharastra</option>
+                <option value="tamilnadu">tamilnadu</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>course intrested</td>
+        <td>
+            <input type="checkbox" name="python" value="python">
+            <label>python</label><br>
+            <input type="checkbox" name="datascience" value="datascience">
+            <label>datascience</label><br>
+            <input type="checkbox" name="bigdata" value="bigdata">
+            <label>bigdata</label><br>
+        </td>
+    </tr>
+    <tr>
+        <td>username</td>
+        <td><input type="text" name="username"></td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td><input type="text" name="password"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" name="submit" value="student register"</td>
+    </tr>
+</table>
+</form>
+{% endblock %}
