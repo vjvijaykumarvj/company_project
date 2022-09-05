@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block style_content %}
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4C0000;
+  color: white;
+}
+</style>
+{% endblock %}
+
+{% block title_content %}
+    <title>Employee Details</title>
+{% endblock %}
+
+{% block page_content %}
+<h1>Load All Employee</h1>
+<br>
+<a href="/emp_create/">Create Employee</a>
+<br><br>
+
+<table id="customers">
+  <tr>
+    <th>ID</th>
+    <th>EMPLOYEE ENO</th>
+    <th>FIRST NAME</th>
+    <th>LAST NAME</th>
+    <th>AGE</th>
+	<th>SALARY</th>
+    <th>ADDRESS</th>
+  </tr>
+{% for employee in form_list %}
+  <tr>
+    <td><a href="{% url 'employee:emp_id'  pk=employee.id %}">{{ employee.id }}</a></td>
+    <td>{{ employee.eno }}</td>
+    <td>{{ employee.firstname }}</td>
+    <td>{{ employee.lastname }}</td>
+    <td>{{ employee.age }}</td>
+	<td>{{ employee.salary }}</td>
+    <td>{{ employee.address }}</td>
+  </tr>
+  {% empty %}
+    <tr>
+      <td>No Data</td>
+      <td>No Data</td>
+      <td>No Data</td>
+      <td>No Data</td>
+      <td>No Data</td>
+      <td>No Data</td>
+    </tr>
+ {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title_content %}
+<title>Home</title>
+{% endblock %}
+
+
+{% block page_content %}
+{% if user.is_authenticated %}
+<h2>Hello welcome {{firstname}}</h2>
+<!--<a href="/emp_Apply/"><button>Employee Apply Form</button></a>-->
+{% else %}
+<h1>Home page</h1>
+<p> If you apply the employee first login next you apply</p>
+{% endif %}
+{% endblock %}
