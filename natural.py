@@ -9,7 +9,7 @@ def checkin():
             else:
                 print(i)
 checkin()
-
+print('iamprinted all the prime numbers')
 
 
 
